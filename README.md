@@ -9,6 +9,8 @@ https://www.programiz.com/python-programming
 
 https://www.tutorialspoint.com/python/index.htm
 
+https://www.digitalocean.com/community/books/digitalocean-ebook-how-to-code-in-python
+
 https://cfm.ehu.es/ricardo/docs/python/Learning_Python.pdf
 
 Online IDE/Compilers
