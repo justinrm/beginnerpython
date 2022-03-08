@@ -17,8 +17,6 @@ def setGuess():
             print("Expecting an integer, try again...")
             continue
 
-
-
 def main():
     MAX_GUESSES, NUM_MIN, NUM_MAX = setGuess()
     secretNum = random.randint(NUM_MIN, NUM_MAX)
