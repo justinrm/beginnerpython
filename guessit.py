@@ -6,21 +6,25 @@ Purpose: Guess the number game.
 
 import random
 
+# Let's set some variables that'll be used in main().
+# This input is proteted by the ValueError exception and by int().
 def setGuess():
     while True:
         try:
-            MAX_GUESSES = int(input("How many guesses should you get? "))
-            NUM_MIN = int(input("What is the smallest number I should use? "))
-            NUM_MAX = int(input("What is the largest number I should use? "))
-            return MAX_GUESSES, NUM_MIN, NUM_MAX
+            max_guesses = int(input("How many guesses should you get? "))
+            num_min = int(input("What is the smallest number I should use? "))
+            num_max = int(input("What is the largest number I should use? "))
+            return max_guesses, num_min, num_max
         except ValueError:
             print("Expecting an integer, try again...")
             continue
 
+# Entry point for the game. A series of if...else statements to control variables.
+# If you get errors with the f-strings, try uppdating your Python version (> 3.6).
 def main():
-    MAX_GUESSES, NUM_MIN, NUM_MAX = setGuess()
-    secretNum = random.randint(NUM_MIN, NUM_MAX)
-    guessNum = MAX_GUESSES
+    max_guesses, num_min, num_max = setGuess()
+    secretNum = random.randint(num_min, num_max)
+    guessNum = max_guesses
     while True:
         if guessNum > 0:
             try:
