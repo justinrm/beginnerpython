@@ -5,7 +5,8 @@ Purpose: This is my solution to the following challenge:
 https://edabit.com/challenge/gzmFeaXwFv8X6pBGq
 
 I'm only sharing it because I think it's a pretty nifty
-for loop example.
+for loop example and I have not seen one used in the posted
+solutions.
 """
 
 def series_resistance(first):
