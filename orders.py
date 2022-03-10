@@ -1,5 +1,5 @@
 """
-Program: assignment8.py
+Program: orders.py
 Author: Justin Merwin
 Purpose: Utilize OOP to create an application that allows the user to create, delete, or modify orders.
          This allowed me to practice a variety of fundamental concepts.
