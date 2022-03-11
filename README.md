@@ -9,7 +9,7 @@ https://www.programiz.com/python-programming
 
 https://docs.microsoft.com/en-us/learn/browse/?terms=Python%20
 
-https://www.tutorialspoint.com/python/index.htm
+https://realpython.com/learning-paths/
 
 https://www.digitalocean.com/community/books/digitalocean-ebook-how-to-code-in-python
 
