@@ -13,8 +13,8 @@ losses = 0
 i = 0
 
 def userWin():
-           print(f"{user_name} chose " + choices.get(user_choice) + " and the computer chose " + choices.get(npc_choice) + f"! {user_name} won!")
-           keepScore()
+    print(f"{user_name} chose " + choices.get(user_choice) + " and the computer chose " + choices.get(npc_choice) + f"! {user_name} won!")
+    keepScore()
 
 def keepScore():
     print(f"{user_name}, you have {wins} win(s), {ties} tie(s), and {losses} loss(es).")
