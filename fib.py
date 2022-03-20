@@ -16,15 +16,14 @@ def fib(n):
     else:
         return fib(n-1) + fib(n-2)
 
-num_terms = int(input("How many terms deep would you like displayed? \n >>> "))
-
 while True:
     terms = []
+    num_terms = int(input("How many terms deep would you like displayed? \n >>> "))
     if num_terms <= 0:
         print("Please enter a positive integer.")
-        break
+        continue
     else:
         for i in range(num_terms):
             terms.append(fib(i))
         print(*terms, sep=' - ')
-        break
+        continue
