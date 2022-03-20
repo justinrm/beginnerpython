@@ -1,10 +1,11 @@
-# Author: Justin Merwin
-# Program: fib.py
-#
-# Purpose:
-#
-# Recursively find n terms in the Fibonacci sequence.
-# I know this has been done many times, but this is my take on it.
+"""
+Author: Justin Merwin
+Program: fib.py
+
+Purpose:
+Recursively find n terms in the Fibonacci sequence.
+I know this has been done many times, but this is my take on it.
+"""
 
 cache = {0: 0, 1: 1}
 
