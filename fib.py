@@ -5,16 +5,15 @@
 #
 # Recursively find n terms in the Fibonacci sequence.
 # I know this has been done many times, but this is my take on it.
-#
-# ISSUES:
-#   - Currently, larger numbers (around 50) make the program freeze up on computers with less power.
-#     I don't know how to make it work any better. Perhaps using a cache of sorts?
+
+cache = {0: 0, 1: 1}
 
 def fib(n):
-    if n <= 1:
-        return n
+    if n in cache:
+        return cache[n]
     else:
-        return fib(n-1) + fib(n-2)
+        cache[n] = fib(n-1) + fib(n-2)
+        return cache[n]
 
 while True:
     terms = []
