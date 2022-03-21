@@ -7,7 +7,7 @@ Recursively find n terms in the Fibonacci sequence.
 I know this has been done many times, but this is my take on it.
 """
 
-from functool import cache
+from functools import cache
 
 @cache
 def fib(n):
