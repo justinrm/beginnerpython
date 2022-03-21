@@ -7,14 +7,14 @@ Recursively find n terms in the Fibonacci sequence.
 I know this has been done many times, but this is my take on it.
 """
 
-cache = {0: 0, 1: 1}
+from functool import cache
 
+@cache
 def fib(n):
-    if n in cache:
-        return cache[n]
+    if n in {0, 1}:
+        return n
     else:
-        cache[n] = fib(n-1) + fib(n-2)
-        return cache[n]
+        return fib(n-1) + fib(n-2)
 
 while True:
     terms = []
