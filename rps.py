@@ -10,7 +10,6 @@ rounds = int(input(f"How many rounds would you like to play, {user_name}? \n >>>
 wins = 0
 ties = 0
 losses = 0
-i = 0
 
 def userWin():
            print(f"{user_name} chose " + choices.get(user_choice) + " and the computer chose " + choices.get(npc_choice) + f"! {user_name} won!")
@@ -41,4 +40,3 @@ for i in range(rounds):
         keepScore()
 
 print(f"The game has ended after {rounds} rounds.")
-keepScore()
