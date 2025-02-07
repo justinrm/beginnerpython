@@ -1,0 +1,68 @@
+import argparse
+import numpy as np
+from matplotlib.animation import FuncAnimation
+
+#!/usr/bin/env python3
+"""
+A Python script to animate a Fibonacci spiral (approximated by a golden spiral)
+up to a goal radius provided by the user.
+Usage: python fibonacci-plot.py --goal=100
+"""
+
+import matplotlib.pyplot as plt
+
+def fibonacci_spiral(goal, num_frames=500):
+    # The Fibonacci spiral is well approximated by the golden spiral.
+    # When the angle increases by π/2, the radius multiplies by phi.
+    phi = (1 + np.sqrt(5)) / 2
+    b = np.log(phi) / (np.pi/2)  # so that r multiplies by phi every quarter-turn
+    c = 1.0  # starting radius (set to 1 so that spiral starts at 1)
+    # Compute the maximum theta so that r nearly reaches the goal value.
+    if goal <= c:
+        theta_max = np.pi/2
+    else:
+        theta_max = np.log(goal/c) / b
+
+    theta = np.linspace(0, theta_max, num_frames)
+    r = c * np.exp(b * theta)
+    x = r * np.cos(theta)
+    y = r * np.sin(theta)
+    return x, y
+
+def main():
+    parser = argparse.ArgumentParser(description="Animate a Fibonacci (golden) spiral.")
+    parser.add_argument("--goal", type=float, required=True,
+                        help="Goal value for the spiral's radius (e.g., 100)")
+    args = parser.parse_args()
+
+    # Build spiral data
+    x, y = fibonacci_spiral(args.goal, num_frames=500)
+
+    # Initialize plot
+    fig, ax = plt.subplots()
+    line, = ax.plot([], [], lw=2, color='blue')
+    ax.set_aspect('equal')
+    ax.set_title("Fibonacci Spiral Animation")
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
+
+    # Set an appropriate limits to see the spiral well
+    margin = args.goal * 0.1
+    ax.set_xlim(np.min(x)-margin, np.max(x)+margin)
+    ax.set_ylim(np.min(y)-margin, np.max(y)+margin)
+
+    def init():
+        line.set_data([], [])
+        return line,
+
+    def update(frame):
+        line.set_data(x[:frame], y[:frame])
+        return line,
+
+    ani = FuncAnimation(fig, update, frames=len(x),
+                        init_func=init, blit=True, interval=20, repeat=False)
+
+    plt.show()
+
+if __name__ == "__main__":
+    main()
